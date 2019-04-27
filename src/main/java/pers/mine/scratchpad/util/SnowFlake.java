@@ -89,15 +89,4 @@ public class SnowFlake {
 	private long getTimeStmp() {
 		return System.currentTimeMillis();
 	}
-
-	public static void main(String[] args) {
-		long start = System.currentTimeMillis();
-		SnowFlake snowFlake = new SnowFlake(0, 0);
-		for (int i = 0; i < 1 << 15; i++) {
-			// long id = snowFlake.nextID();
-			String id = snowFlake.nextID(16);
-			System.out.println(id + ":" + ("" + id).length());
-		}
-		System.out.println(System.currentTimeMillis() - start + "ms");
-	}
 }
