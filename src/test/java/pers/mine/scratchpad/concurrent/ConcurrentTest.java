@@ -8,7 +8,6 @@ import org.junit.Test;
 
 /**
  * 简单使用 CountDownLatch 和 CyclicBarrier
- * 
  * @author xqwang
  * @since 2019年3月27日
  */
@@ -77,6 +76,7 @@ public class ConcurrentTest {
 		public CBRunnable(CyclicBarrier cb){
 			this.cb=cb;
 		}
+		
 		public void run() {
 			try {
 				System.out.println(System.currentTimeMillis() + ":"
