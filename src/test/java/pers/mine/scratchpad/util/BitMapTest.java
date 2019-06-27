@@ -32,9 +32,35 @@ public class BitMapTest {
 
 	@Test
 	public void testGet() {
-		fail("Not yet implemented");
+		fun(5);
+		fun(-5);
+		System.out.println(5<<2);
+		fun(5<<2);
+		System.out.println(-5<<2);
+		fun(-5<<2);
+		
+		fun(5);
+		System.out.println(5>>>2);
+		fun(5>>>2);
+		System.out.println(5>>2);
+		fun(5>>2);
+		
+		fun(-5);
+		fun(-5>>>2);
+		System.out.println(-5>>>2);
+		fun(-5>>2);
+		System.out.println(-5>>2);
+		
 	}
-
+	
+	void fun(int i){
+		String tmp = Integer.toBinaryString(i);
+		String tmp2 = "";
+		if (tmp.length() < 32) {
+			tmp2 = StringX.dup("0", 32 - tmp.length());
+		}
+		System.out.println(tmp2+tmp);
+	}
 	@Test
 	public void testSetIntegerBitValue() {
 		fail("Not yet implemented");
