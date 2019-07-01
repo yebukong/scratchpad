@@ -16,6 +16,9 @@ public class ThreadTest {
 	@Test
 	public void showThreads(){
 		Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
+		int activeCount = Thread.activeCount();//当前活动线程数
+		System.out.println(activeCount);
+		
 		for (Thread t : allStackTraces.keySet()) {
 			System.out.println(t.getName());
 		}
@@ -34,7 +37,8 @@ public class ThreadTest {
 	}
 	
 	/**
-	 * 另一种获取方式
+	 * 另一种获取方式：通过线程组
+	 *  线程组相关:https://www.cnblogs.com/noteless/p/10354721.html
 	 */
 	@Test
 	public void showThreadsX(){
@@ -48,7 +52,7 @@ public class ThreadTest {
 		// 激活的线程数加倍
 		int estimatedSize = topGroup.activeCount() * 2;
 		Thread[] slackList = new Thread[estimatedSize];
-		// 获取根线程组的所有线程
+		// 枚举根线程组的所有线程 
 		int actualSize = topGroup.enumerate(slackList);
 		// copy into a list that is the exact size
 		Thread[] list = new Thread[actualSize];
