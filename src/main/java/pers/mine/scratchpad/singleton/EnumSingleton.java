@@ -10,19 +10,10 @@ public enum EnumSingleton {
      * JVM保证这个方法绝对只调用一次,但这种方式是饿汉式
      */
 	EnumSingleton() {
-		System.out.println(123);
+		System.out.println("初始化");
     }
 	public static void test() {
 		System.out.println("test");
-	}
-	
-	public static void main(String[] args) {
-		EnumSingleton.test();
-//		System.out.println();
-//		System.out.println(EnumSingleton.instance);
-//
-//		System.out.println(EnumSingleton.instance);
-
 	}
 }
 
