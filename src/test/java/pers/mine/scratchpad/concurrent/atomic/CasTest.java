@@ -22,9 +22,7 @@ public class CasTest {
 		System.out.println(ai.compareAndSet(5, 2019) + "|" + ai.get());
 		System.out.println(ai.compareAndSet(5, 1024) + "|" + ai.get());
 		System.out.println(ai.getAndIncrement());
-
 	}
-	// 这里的cas【weakCompareAndSetInt】是并发原语 依赖于硬件实现，属于原子指令
 	// offset 表示内存地址
 	// 当获取值后到修改值过程中，值被改过，cas将不通过，需要重新从主内存获取最新值，进行下一次修改尝试
 	//
@@ -32,6 +30,7 @@ public class CasTest {
 //		int v;
 //		do {
 //			v = getIntVolatile(o, offset);
+//      这里的cas【weakCompareAndSetInt】是并发原语 依赖于硬件实现，属于原子指令,多线程安全自增基础
 //		} while (!weakCompareAndSetInt(o, offset, v, v + delta));
 //		return v;
 //	}
