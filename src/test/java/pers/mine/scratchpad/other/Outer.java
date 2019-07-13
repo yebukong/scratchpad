@@ -1,5 +1,10 @@
 package pers.mine.scratchpad.other;
 
+/**
+ * https://www.zhihu.com/question/329007850
+ * @author Mine
+ * @date 2019/07/13 23:25:32
+ */
 public class Outer {
     private String s = "outer.s"; 
     
