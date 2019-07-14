@@ -25,7 +25,7 @@ public class StrictfpTest {
 		System.out.println(String.format("Math.round(15.50) =  %s", Math.round(15.50)));
 		System.out.println(String.format("Math.round(15.49) =  %s", Math.round(15.49)));
 
-		// 向上取整
+		// 向上取整  Math.ceil
 		System.out.println();
 		System.out.println(String.format("Math.ceil(-15.01) =  %s", Math.ceil(-15.01)));
 		System.out.println(String.format("Math.ceil(-15.00) =  %s", Math.ceil(-15.00)));
@@ -35,7 +35,7 @@ public class StrictfpTest {
 		System.out.println(String.format("Math.ceil(15.00) =  %s", Math.ceil(15.00)));
 		System.out.println(String.format("Math.ceil(14.99) =  %s", Math.ceil(14.99)));
 
-		// 向下取整
+		// 向下取整  Math.floor
 		System.out.println();
 		System.out.println(String.format("Math.floor(-15.01) =  %s", Math.floor(-15.01)));
 		System.out.println(String.format("Math.floor(-15.00) =  %s", Math.floor(-15.00)));
