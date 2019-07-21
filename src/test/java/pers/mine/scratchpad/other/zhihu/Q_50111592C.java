@@ -1,5 +1,7 @@
 package pers.mine.scratchpad.other.zhihu;
 
+import java.util.Date;
+
 /**
  * 下列程序的输出:
  *考察字符串常量池
