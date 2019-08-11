@@ -2,6 +2,9 @@ package pers.mine.scratchpad.concurrent;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 import org.junit.Test;
 
@@ -43,7 +46,6 @@ public class FlowThreadTest {
 		Thread.sleep(3000);
 	}
 
-	
 	/**
 	 * 使用单线程池 Executors.newSingleThreadExecutor();
 	 */
@@ -85,20 +87,94 @@ public class FlowThreadTest {
 			}
 		}
 	}
-	
+
 	/**
-	 * 使用wait()和notify()
+	 * 使用wait()和notify() 类似 lock 和Condition搭配
 	 */
 	@Test
-	public void test3() throws InterruptedException {
-		//TODO
+	public void test31() throws InterruptedException {
+		ShareData sd = new ShareData();
+		new Thread(() -> {
+			for (int i = 0; i < 5; i++) {
+				sd.sayA();
+			}
+		}).start();
+		new Thread(() -> {
+			for (int i = 0; i < 5; i++) {
+				sd.sayB();
+			}
+		}).start();
+		new Thread(() -> {
+			for (int i = 0; i < 5; i++) {
+				sd.sayC();
+			}
+		}).start();
+		TimeUnit.SECONDS.sleep(3);
+		Thread.sleep(3000);
 	}
-	
+
+	/**
+	 * 
+	 * Condition线程间细粒度通信
+	 */
+	class ShareData {
+		private int data = 1;
+		private ReentrantLock lock = new ReentrantLock();
+		private Condition conditionA = lock.newCondition();
+		private Condition conditionB = lock.newCondition();
+		private Condition conditionC = lock.newCondition();
+
+		public void sayA() {
+			lock.lock();
+			try {
+				while (data != 1) {
+					conditionA.await();
+				}
+				data = 2;
+				System.out.println("A说话");
+				conditionB.signalAll();// 通知
+			} catch (Exception e) {
+			} finally {
+				lock.unlock();
+			}
+		}
+
+		public void sayB() {
+			lock.lock();
+			try {
+				while (data != 2) {
+					conditionB.await();
+				}
+				data = 3;
+				System.out.println("B说话");
+				conditionC.signalAll();// 通知
+			} catch (Exception e) {
+			} finally {
+				lock.unlock();
+			}
+		}
+
+		public void sayC() {
+			lock.lock();
+			try {
+				while (data != 3) {
+					conditionC.await();
+				}
+				data = 1;
+				System.out.println("C说话");
+				conditionA.signalAll();// 通知
+			} catch (Exception e) {
+			} finally {
+				lock.unlock();
+			}
+		}
+	}
+
 	/**
 	 * 使用CountDownLatch
 	 */
 	@Test
 	public void test4() throws InterruptedException {
-		//TODO
+		// TODO
 	}
 }
