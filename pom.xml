@@ -22,19 +22,23 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<!--指定编译的java版本1.7 1.8 1.9 10 11 -->
-		<java.version>10</java.version>
+		<java.version>1.8</java.version>
 		<commons-io.version>2.4</commons-io.version>
 		<junit.version>4.12</junit.version>
 		<poi.version>4.1.0</poi.version>
 		<lombok.version>1.18.6</lombok.version>
 		<guava.version>27.1-jre</guava.version>
+		<cglib.version>3.2.12</cglib.version>
+		<transmittable.version>2.10.2</transmittable.version>
+		<ical4j.version>2.0.0</ical4j.version>
 	</properties>
 
-	<dependencies><dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi-scratchpad</artifactId>
-    <version>4.1.0</version>
-</dependency>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>4.1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -71,6 +75,24 @@
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>${cglib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>transmittable-thread-local</artifactId>
+			<version>${transmittable.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mnode.ical4j</groupId>
+			<artifactId>ical4j</artifactId>
+			<version>${ical4j.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
