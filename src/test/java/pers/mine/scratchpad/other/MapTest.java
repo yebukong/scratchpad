@@ -8,6 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.junit.Test;
 
+import cn.hutool.core.util.StrUtil;
+
 public class MapTest {
 	@Test
 	public void hashMap() {
@@ -35,5 +37,16 @@ public class MapTest {
 		Hashtable<String, String> map = new Hashtable<String, String>();
 		map.put("", null);// 存在 NPE
 		map.put(null, "");// 存在 NPE
+	}
+	
+	@Test
+	public void other() {
+		int i =1;
+		System.out.println(i++);
+		System.out.println(i);
+		Map<String, Long> map = new HashMap<String, Long>();
+		System.out.println(map.get("123"));
+		System.out.println(String.format("BLNoSource_{}_{}_{}", 1, 2, 3));
+		System.out.println(StrUtil.format("BLNoSource_{}_{}_{}", 1, 2, 3));
 	}
 }
