@@ -31,6 +31,9 @@
 		<cglib.version>3.2.12</cglib.version>
 		<transmittable.version>2.10.2</transmittable.version>
 		<ical4j.version>2.0.0</ical4j.version>
+		<fastjson.version>1.2.60</fastjson.version>
+		<spring.version>3.2.14.RELEASE</spring.version>
+		<hutool.version>4.6.1</hutool.version>
 	</properties>
 
 	<dependencies>
@@ -92,7 +95,26 @@
 			<artifactId>ical4j</artifactId>
 			<version>${ical4j.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-http</artifactId>
+			<version>${hutool.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
