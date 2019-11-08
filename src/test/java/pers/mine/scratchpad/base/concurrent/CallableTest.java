@@ -1,4 +1,4 @@
-package pers.mine.scratchpad.concurrent;
+package pers.mine.scratchpad.base.concurrent;
 
 import java.util.UUID;
 import java.util.concurrent.Callable;

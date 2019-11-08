@@ -1,4 +1,4 @@
-package pers.mine.scratchpad.lambda;
+package pers.mine.scratchpad.base.lambda;
 
 import static org.junit.Assert.fail;
 
