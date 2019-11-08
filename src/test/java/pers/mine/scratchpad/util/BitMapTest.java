@@ -5,9 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class BitMapTest {
-
+	private Object test;
 	@Test
 	public void testBitMap() {
+		System.out.println(test);
 		BitMap bm = new BitMap(1000);
 		bm.put(63);
 		bm.put(31);

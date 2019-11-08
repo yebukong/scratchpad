@@ -47,4 +47,19 @@ public class StringReverseTest {
 		}
 		System.out.println();
 	}
+	
+	/**
+	 */
+	@Test
+	public void showChars() {
+		char cs[] = {'a','b','c'};
+		String[] ss = {"a","b"};
+		System.out.println(cs);
+		System.out.print(cs);
+		System.out.println();
+		System.out.println(ss);
+		System.out.print(ss);
+
+
+	}
 }

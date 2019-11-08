@@ -49,10 +49,19 @@ public class ContainerNotSafeTest {
 				list.add(tmp + "");
 				System.out.println(list);
 			}).start();
-			;
 		}
 		TimeUnit.SECONDS.sleep(3);
 		System.out.println(list);
+
+	}
+	
+	@Test
+	public void test211() throws InterruptedException {
+		List<String> list = new ArrayList<String>(Arrays.asList("A", "B", "C"));
+		//java List的remove方法也会导致的异常java.util.ConcurrentModificationException
+		for (int i = 0; i<list.size(); i++) {
+			list.remove(i+1);
+		}
 
 	}
 

@@ -45,6 +45,7 @@ public class Singleton {
 	}
 
 	/**
+	 * 深入原理：https://blog.csdn.net/mnb65482/article/details/80458571
 	 * 静态内部类方式：没有if，DCL方式效率更高一掉吧，但依然会有反射的问题
 	 * 1.静态内部类不会随着外部类的初始化而初始化，他是要单独去加载和初始化的，当第一次执行getInstance方法时，Inner类会被初始化。 
 	 * <br>2.静态对象SINGLETION的初始化在Inner类初始化阶段进行，类初始化阶段即虚拟机执行类构造器<clinit>()方法的过程。
