@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.alibaba.ttl.TtlRunnable;
+import com.alibaba.ttl.threadpool.TtlExecutors;
 
 /**
  * 线程本地变量
@@ -16,6 +17,9 @@ import com.alibaba.ttl.TtlRunnable;
  * @date 2019/07/17 07:19:00
  */
 public class ThreadLocalTest {
+	/**
+	 * 普通ThreadLocal变量
+	 */
 	final ThreadLocal<Integer> local = new ThreadLocal<Integer>() {
 		/*
 		 * 可以使用重写的方式赋初始值
@@ -26,12 +30,18 @@ public class ThreadLocalTest {
 			return -1;
 		};
 	};
+	/**
+	 * 可继承的ThreadLocal变量：父子线程之间传递
+	 */
 	ThreadLocal<Integer> inheritableLocal = new InheritableThreadLocal<Integer>() {
 		protected Integer initialValue() {
 			return -2;
 		};
 	};
 
+	/**
+	 * 可在线程池调用中传递的ThreadLocal变量,需要搭配TtlRunnable使用
+	 */
 	ThreadLocal<Integer> transmittableLocal = new TransmittableThreadLocal<Integer>() {
 		protected Integer initialValue() {
 			return -3;
@@ -69,6 +79,8 @@ public class ThreadLocalTest {
 		test2("run");
 		System.out.println();
 		TimeUnit.SECONDS.sleep(1);
+		//可以使用TtlExecutors包装线程池
+		//ExecutorService execService = TtlExecutors.getTtlExecutorService(Executors.newFixedThreadPool(2));
 		ExecutorService execService = Executors.newFixedThreadPool(3);
 		for (int i = 0; i < 5; i++) {
 			execService.submit(TtlRunnable.get(() -> {
