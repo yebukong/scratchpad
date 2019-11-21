@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<!--指定编译的java版本1.7 1.8 1.9 10 11 -->
-		<java.version>1.8</java.version>
+		<java.version>10</java.version>
 		<commons-io.version>2.4</commons-io.version>
 		<junit.version>4.12</junit.version>
 		<poi.version>4.1.0</poi.version>
@@ -34,13 +34,27 @@
 		<fastjson.version>1.2.60</fastjson.version>
 		<spring.version>3.2.14.RELEASE</spring.version>
 		<hutool.version>4.6.1</hutool.version>
+		<commonmark.version>0.13.0</commonmark.version>
+		<jsch.version>0.1.55</jsch.version>
+		<flexmark.version>0.34.48</flexmark.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-scratchpad</artifactId>
-			<version>4.1.0</version>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark</artifactId>
+			<version>${commonmark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark-ext-gfm-tables</artifactId>
+			<version>${commonmark.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark-all</artifactId>
+			<version>${flexmark.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -57,6 +71,11 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
 			<version>${poi.version}</version>
 		</dependency>
 		<!-- 工具类 -->
@@ -114,6 +133,11 @@
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-http</artifactId>
 			<version>${hutool.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>${jsch.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
