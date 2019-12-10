@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" scanPeriod="120 seconds">
+
+	<property name="log.base" value="/data1/dw/logs" />
+	<property name="trace" value="trace" />
+	<property name="debug" value="debug" />
+	<property name="info" value="info" />
+	<property name="warn" value="warn" />
+	<property name="error" value="error" />
+	<property name="pname" value="easyconsumer" />
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+<!-- 			<pattern>%date [%thread] [%level] %logger Line:%L - %msg %n</pattern> -->	
+		        <pattern>%date [%thread] [%level] - %msg %n</pattern>
+		</encoder>
+	</appender>
+	<appender name="TRACE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.base}/${log.pname}/${easyconsumer.name}/log.%d{yyyy-MM-dd}
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date [%thread] [%level] %logger - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
