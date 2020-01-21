@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class BitMapTest {
 	private Object test;
+	
 	@Test
 	public void testBitMap() {
 		System.out.println(test);

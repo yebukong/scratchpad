@@ -1,38 +1,25 @@
 package pers.mine.scratchpad;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.stream.Stream;
+
+import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest {
+	@Test
+	public void one() throws Exception {
+		for (int i = 1; i < 98; i++) {
+			System.out.print(i + ",");
+		}
+	}
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@Test
+	public void stream() throws Exception {
+		Stream.iterate(0, t -> ++t).limit(70).forEach(t -> {
+			System.out.print(t + ",");
+		});
+	}
 }
