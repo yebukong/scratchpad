@@ -26,7 +26,7 @@ public class ThreadTest {
 	
 	@Test
 	public void showThreadsInfo(){
-		Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
+		Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();                                                                            
 		for (Thread t : allStackTraces.keySet()) {
 			System.out.println(t.getName());
 			StackTraceElement[] stackTraceElements = allStackTraces.get(t);
