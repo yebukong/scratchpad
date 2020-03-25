@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<!--指定编译的java版本1.7 1.8 1.9 10 11 -->
-		<java.version>10</java.version>
+		<java.version>13</java.version>
 		<commons-io.version>2.4</commons-io.version>
 		<junit.version>4.12</junit.version>
 		<poi.version>4.1.0</poi.version>
