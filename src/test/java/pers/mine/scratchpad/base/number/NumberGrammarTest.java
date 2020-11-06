@@ -18,6 +18,12 @@ public class NumberGrammarTest {
         double a11 = 1E-3;// 表示1 * （1/（10 *10 *10））
         double a12 = 8E-3;
         double a13 = 10E2;
+        double a14 = 10.0123D;
+        double a15 = 10.0123d;
+        double a16 = .0111d;
+        float a17 = 10.0123f;
+        float a18 = 10.0123f;
+        float a19 = .0123f;
 
         System.out.println("a1  - " + a1);
         System.out.println("a2  - " + a2);
@@ -32,5 +38,12 @@ public class NumberGrammarTest {
         System.out.println("a11 - " + a11);
         System.out.println("a12 - " + a12);
         System.out.println("a13 - " + a13);
+
+        System.out.println("a14 - " + a14);
+        System.out.println("a15 - " + a15);
+        System.out.println("a16 - " + a16);
+        System.out.println("a17 - " + a17);
+        System.out.println("a18 - " + a18);
+        System.out.println("a19 - " + a19);
     }
 }
