@@ -20,7 +20,7 @@ public class NumberGrammarTest {
         double a13 = 10E2;
         double a14 = 10.0123D;
         double a15 = 10.0123d;
-        double a16 = .0111d;
+        double a16 = .0111d;  // 0可以省略
         float a17 = 10.0123f;
         float a18 = 10.0123f;
         float a19 = .0123f;
