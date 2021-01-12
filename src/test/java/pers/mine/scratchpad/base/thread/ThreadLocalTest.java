@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.alibaba.ttl.TtlRunnable;
-import com.alibaba.ttl.threadpool.TtlExecutors;
 
 /**
  * 线程本地变量
@@ -48,24 +47,25 @@ public class ThreadLocalTest {
 		};
 	};
 
+
 	@Test
 	public void test1() throws InterruptedException {
-		test3("init");
+		echo("init");
 		test2("run");
 		TimeUnit.SECONDS.sleep(2);
 		new Thread(() -> {
-			test3("init");
+			echo("init");
 			test2("run");
 			// 用完记得remove,防止内存泄漏
 			local.remove();
 		}).start();
 		new Thread(() -> {
-			test3("init");
+			echo("init");
 			test2("run");
 		}).start();
 
 		TimeUnit.SECONDS.sleep(2);
-		test3("end");
+		echo("end");
 
 	}
 
@@ -75,7 +75,7 @@ public class ThreadLocalTest {
 
 	@Test
 	public void testThreadPool() throws InterruptedException {
-		test3("init");
+		echo("init");
 		test2("run");
 		System.out.println();
 		TimeUnit.SECONDS.sleep(1);
@@ -85,7 +85,7 @@ public class ThreadLocalTest {
 		for (int i = 0; i < 5; i++) {
 			execService.submit(TtlRunnable.get(() -> {
 
-				test3("init1");
+				echo("init1");
 				test2("run1");
 				// 用完记得remove,防止内存泄漏,以及污染复用线程的变量
 //				local.remove();
@@ -94,7 +94,7 @@ public class ThreadLocalTest {
 
 			}));
 			execService.submit(TtlRunnable.get(() -> {
-				test3("init2");
+				echo("init2");
 				test2("run2");
 //				local.remove();
 //				inheritableLocal.remove();// inheritableLocal.remove会造成父进程变量丢失
@@ -105,7 +105,7 @@ public class ThreadLocalTest {
 
 		TimeUnit.SECONDS.sleep(4);
 		System.out.println();
-		test3("end");
+		echo("end");
 	}
 
 	public void test2(String mark) {
@@ -113,10 +113,10 @@ public class ThreadLocalTest {
 		local.set(tmp);
 		inheritableLocal.set(tmp);
 		transmittableLocal.set(tmp);
-		test3(mark);
+		echo(mark);
 	}
 
-	public void test3(String mark) {
+	public void echo(String mark) {
 		System.out.println(String.format("%18s [%5s]- local : %5s  inheritableLocal : %5s transmittableLocal : %5s",
 				Thread.currentThread().getName(), mark, local.get(), inheritableLocal.get(), transmittableLocal.get()));
 	}
