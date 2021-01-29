@@ -16,7 +16,7 @@ public interface FunactionDemoA {
 	/**
 	 * java.lang.Object中的方法不是抽象方法
 	 */
-	public String toString();
+	public  String toString();
 
 	/**
 	 * default不是抽象方法
