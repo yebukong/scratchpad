@@ -51,4 +51,15 @@ public class TryCacheTest2 {
         }
     }
 
+    public int increment(){
+        int i = 0;
+        try{
+            return i++;
+        }catch (Exception e){
+            return i;
+        }finally {
+            System.out.println(i);
+            i++;
+        }
+    }
 }
