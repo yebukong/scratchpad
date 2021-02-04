@@ -10,6 +10,20 @@ import java.util.stream.IntStream;
 public class AvoidGetfieldOpcodeTest {
     private final long[] val = {0};
 
+    static {
+        System.out.println("static init");
+    }
+
+    {
+        System.out.println("initX");
+    }
+
+    public AvoidGetfieldOpcodeTest() {
+        System.out.println("init");
+    }
+
+
+
     public void reset() {
         val[0] = 0;
     }

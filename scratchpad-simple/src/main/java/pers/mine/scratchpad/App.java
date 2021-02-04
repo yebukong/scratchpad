@@ -1,6 +1,5 @@
 package pers.mine.scratchpad;
 
-import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -35,5 +34,22 @@ public class App {
         long y2 = y1 / 10000;
         System.out.println(y1);
         System.out.println(y2);
+    }
+
+    public static void testIf1(int i) {
+        if (i == 1) {
+            System.out.println("1");
+        }
+        if (i == 2) {
+            System.out.println("1");
+        }
+    }
+
+    public static void testIf2(int i) {
+        if (i == 1) {
+            System.out.println("1");
+        } else if (i == 2) {
+            System.out.println("1");
+        }
     }
 }
