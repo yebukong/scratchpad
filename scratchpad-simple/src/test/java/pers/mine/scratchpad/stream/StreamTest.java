@@ -43,4 +43,19 @@ public class StreamTest {
             System.out.println(integer);
         }
     }
+
+    @Test
+    public void flatMapTest() {
+        Stream<Integer> intStream = Stream.iterate(1, i -> i + 1).limit(100);
+        Stream<String> doubleStream = intStream.flatMap(
+                i -> {
+                    if (i < 'A' || i > 'Z') {
+                        return Stream.empty();
+                    } else {
+                        return Stream.of(String.valueOf(((char) i.intValue())));
+                    }
+                }
+        );
+        doubleStream.forEach(System.out::println);
+    }
 }
