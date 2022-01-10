@@ -1,10 +1,13 @@
 package pers.mine.scratchpad;
 
+import manifold.ext.rt.api.Extension;
+
 import java.util.*;
 
 /**
  * Hello world!
  */
+@Extension
 public class App {
     public static void main(String[] args) {
 //        var x = """

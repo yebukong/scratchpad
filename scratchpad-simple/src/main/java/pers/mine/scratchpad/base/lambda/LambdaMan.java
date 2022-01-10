@@ -64,7 +64,15 @@ public class LambdaMan {
         Demo e = new Demo("123");
         man.lambdaCaller(LambdaMan::methodA); //静态方法引用
         man.lambdaCaller(e::objectMethodA); //实例方法引用
-        man.lambdaCallerF(Demo::classMethodF); //类调用实例方法引用 ,
+        man.lambdaCallerF(Demo::classMethodF); //类调用实例方法引用
+        man.lambdaCaller(new FunactionDemoA() {
+            @Override
+            public void test() {
+                System.out.println("123");
+            }
+        });
+
+        man.lambdaCaller(()->System.out.println("123"));
     }
 
 }
