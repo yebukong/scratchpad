@@ -1,6 +1,10 @@
 package pers.mine.scratchpad.base.concurrent;
 
+import cn.hutool.core.util.StrUtil;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.*;
 
@@ -96,9 +100,9 @@ public class ThreadPoolExecutorTest {
                 , 1L
                 , TimeUnit.MINUTES
                 , new ArrayBlockingQueue<>(1)
-                // , new ThreadPoolExecutor.DiscardPolicy()
+                 , new ThreadPoolExecutor.DiscardPolicy()
                 //, new ThreadPoolExecutor.DiscardOldestPolicy()
-                , new ThreadPoolExecutor.AbortPolicy()
+//                , new ThreadPoolExecutor.AbortPolicy()
         );
 
         Future futureOne = es.submit(new Runnable() {
@@ -129,10 +133,59 @@ public class ThreadPoolExecutorTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         System.out.println("task one " + futureOne.get());//(5)等待任务one执行完毕
         System.out.println("task two " + futureTwo.get());//(6)等待任务two执行完毕
-        System.out.println("task three " + (futureThree == null ? null : futureThree.get(30, TimeUnit.SECONDS)));// (7)等待任务three执行完毕
+        System.out.println("task three " + (futureThree == null ? null : futureThree.get()));// (7)等待任务three执行完毕
         es.shutdown();
+    }
+
+    private static final Logger LOG = LoggerFactory.getLogger(ThreadPoolExecutorTest.class);
+
+    @Test
+    public void testScheduledPool() throws InterruptedException {
+        String nameFormat = StrUtil.format("{}-%d", "scheduled-heartbeat");
+        final ScheduledExecutorService heartbeatScheduledPool = Executors.newScheduledThreadPool(4,new ThreadFactoryBuilder().setNameFormat(nameFormat).build());
+        heartbeatScheduledPool.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                LOG.info("one 1");
+                try {
+                    Thread.sleep(10000);
+                }catch (Exception e){
+
+                }
+                LOG.info("one 2");
+
+            }
+        }, 0L, 3, TimeUnit.SECONDS);
+
+        heartbeatScheduledPool.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                LOG.info("two");
+            }
+        }, 0L, 10, TimeUnit.SECONDS);
+
+        //普通的execute依旧可以调用
+//        heartbeatScheduledPool.execute(()->{
+//            LOG.info("execute");
+//        });
+        LOG.info("sleep");
+        Thread.sleep(100000);
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                try {
+                    heartbeatScheduledPool.shutdown();
+                    boolean flag = heartbeatScheduledPool.awaitTermination(30, TimeUnit.MILLISECONDS);
+                    if (!flag) {
+                        heartbeatScheduledPool.shutdownNow();
+                    }
+                } catch (Throwable e) {
+                    LOG.error(e.getMessage(), e);
+                }
+                LOG.info("Shutdown heartbeatScheduledPool");
+            }
+        });
     }
 }

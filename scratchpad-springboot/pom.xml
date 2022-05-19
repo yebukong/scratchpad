@@ -12,7 +12,7 @@
     <artifactId>scratchpad-springboot</artifactId>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>7</java.version>
         <junit.version>4.13.2</junit.version>
     </properties>
 
