@@ -9,6 +9,7 @@ import java.lang.reflect.Field;
 
 /**
  * 交换两个Integer数值,反射，int pool，自动拆箱，装箱
+ * -XX:AutoBoxCacheMax=size
  */
 public class IntegerSwapTest {
     private static final Logger LOG = LoggerFactory.getLogger(IntegerSwapTest.class);
