@@ -15,6 +15,7 @@ public class IntegerSwapTest {
 
     @Test
     public void start() throws IllegalAccessException {
+        logIntCache();
         Integer a = 1;
         Integer b = 2;
         LOG.info("start val: a={},b={}", a, b);
@@ -22,6 +23,7 @@ public class IntegerSwapTest {
         logHashCode("valueOf", Integer.valueOf(1), Integer.valueOf(2));
         logHashCode("newInteger", new Integer(1), new Integer(2));
         LOG.info("-----------------------start swap -----------------------");
+        // swap(a, b);
         swap2(a, b);
         LOG.info("end   val: a={},b={}", a, b);
         logHashCode("swap", a, b);
@@ -33,6 +35,15 @@ public class IntegerSwapTest {
 
     public static void logHashCode(String tag, Integer a, Integer b) {
         LOG.info("HashCode {}: a={},b={}", tag, System.identityHashCode(a), System.identityHashCode(b));
+    }
+
+    public static void logIntCache() throws IllegalAccessException {
+        Class<?> integerCacheClass = Integer.class.getDeclaredClasses()[0];
+        Field cacheField = ClassUtil.getDeclaredField(integerCacheClass, "cache");
+        cacheField.setAccessible(true);
+        //类静态字段的值获取
+        Object cache = cacheField.get(null);
+        LOG.info("integerCache.cache - {}", cache);
     }
 
     private void swap(Integer a, Integer b) throws IllegalAccessException {
@@ -55,4 +66,23 @@ public class IntegerSwapTest {
         value.setInt(a, b);
         value.setInt(b, tmp);
     }
+
+    /**
+     * cache内值交换
+     */
+    private void test3(Integer a, Integer b) throws IllegalAccessException {
+        Class<?> integerCacheClass = Integer.class.getDeclaredClasses()[0];
+        Field cacheField = ClassUtil.getDeclaredField(integerCacheClass, "cache");
+        cacheField.setAccessible(true);
+        Field lowField = ClassUtil.getDeclaredField(integerCacheClass, "low");
+        lowField.setAccessible(true);
+        //类静态字段的值获取
+        Integer[] cache = (Integer[]) cacheField.get(null);
+        int low = (Integer) lowField.get(null);
+        int ai = a.intValue();
+        int bi = b.intValue();
+        cache[a.intValue() + (-low)] = b;
+        cache[b.intValue() + (-low)] = a;
+    }
+
 }
