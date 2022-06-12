@@ -152,7 +152,7 @@
             <version>${mysql.version}</version>
         </dependency>
         <dependency>
-<!--            奇怪的扩展包-->
+            <!--奇怪的扩展包-->
             <groupId>systems.manifold</groupId>
             <artifactId>manifold-ext</artifactId>
             <version>2021.1.9</version>
