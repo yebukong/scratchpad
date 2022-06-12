@@ -37,6 +37,7 @@ public class ClassLoadUnloadTest {
         System.out.println("isInstance test a2: " + (aClass.isInstance(a)));
         System.out.println("instanceof test b1: " + (b instanceof ClassLoadUnloadTest));
         System.out.println("isInstance test b2: " + (aClass.isInstance(b)));
+        System.out.println("isAssignableFrom:" + aClass.isAssignableFrom(ClassLoadUnloadTest.class));
         b = null;
         aClass = null;
         cl = null;
