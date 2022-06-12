@@ -41,7 +41,6 @@ public class ClassLoadTest1 {
 
         public SubClass(int i) {
             System.out.println("sub init xxx");
-            System.out.println("sub init");
         }
 
         public String subField = "subField";
