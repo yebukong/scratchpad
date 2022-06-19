@@ -23,6 +23,8 @@ public class ClassLoadUnloadTest {
         ClassLoadUnloadTest a = new ClassLoadUnloadTest();
         URL resource = ClassLoadUnloadTest.class.getResource("/");
         System.out.println(resource);
+        //parent为空，表示父加载器是启动类加载器
+        //resolve表示是否链接类，不包含初始化
         URLClassLoader cl = new URLClassLoader(new URL[]{resource}, null) {
             @Override
             public Class<?> loadClass(String name) throws ClassNotFoundException {
@@ -42,7 +44,12 @@ public class ClassLoadUnloadTest {
         aClass = null;
         cl = null;
         System.gc();
-        TimeUnit.SECONDS.sleep(30);
+        try {
+            TimeUnit.SECONDS.sleep(300);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("end");
     }
 
     static class SuperClass {
