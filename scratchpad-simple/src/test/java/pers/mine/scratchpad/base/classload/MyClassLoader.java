@@ -33,8 +33,8 @@ public class MyClassLoader extends URLClassLoader {
     }
 
     public static void main(String[] args) throws Exception {
-        ClassLoadUnloadTest a = new ClassLoadUnloadTest();
-        URL resource = ClassLoadUnloadTest.class.getResource("/");
+        ClassLoadUnloadTest1 a = new ClassLoadUnloadTest1();
+        URL resource = ClassLoadUnloadTest1.class.getResource("/");
 
         File f = new File(resource.getPath());
         StrBuilder sbu = new StrBuilder(f.getParentFile().getParentFile().getAbsolutePath());
