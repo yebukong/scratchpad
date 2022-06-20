@@ -5,7 +5,7 @@ import sun.launcher.LauncherHelper;
 import java.sql.DriverManager;
 
 /**
- *
+ * java程序启动涉及的类
  */
 public class ClassMain {
     public static void main(String[] args) {

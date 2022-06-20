@@ -5,7 +5,7 @@ import java.net.URLClassLoader;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 卸载验证
+ * 卸载验证: -Xnoclassgc 关闭卸载<br/>
  * 该类所有的实例已经被回收
  * 加载该类的ClassLoder已经被回收
  * 该类对应的java.lang.Class对象没有任何对方被引用
@@ -14,6 +14,7 @@ public class ClassLoadUnloadTest {
     static {
         System.out.println("ClassLoadUnloadTest 初始化");
     }
+
     public static void main(String[] args) throws Throwable {
         ClassLoadUnloadTest a = new ClassLoadUnloadTest();
         URL resource = ClassLoadUnloadTest1.class.getResource("/");
@@ -36,6 +37,11 @@ public class ClassLoadUnloadTest {
         System.out.println("instanceof test b1: " + (b instanceof ClassLoadUnloadTest));
         System.out.println("isInstance test b2: " + (aClass.isInstance(b)));
         System.out.println("isAssignableFrom:" + aClass.isAssignableFrom(ClassLoadUnloadTest.class));
+
+        Class<?> sClass = cl.loadClass("java.lang.String");
+        System.out.println(String.class.getClassLoader());
+        System.out.println("instanceof sClass: " + (sClass.isAssignableFrom(String.class)));
+
         b = null;
         aClass = null;
         cl = null;

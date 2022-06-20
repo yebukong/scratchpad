@@ -33,8 +33,7 @@ public class MyClassLoader extends URLClassLoader {
     }
 
     public static void main(String[] args) throws Exception {
-        ClassLoadUnloadTest1 a = new ClassLoadUnloadTest1();
-        URL resource = ClassLoadUnloadTest1.class.getResource("/");
+        URL resource = MyClassLoader.class.getResource("/");
 
         File f = new File(resource.getPath());
         StrBuilder sbu = new StrBuilder(f.getParentFile().getParentFile().getAbsolutePath());
@@ -44,7 +43,7 @@ public class MyClassLoader extends URLClassLoader {
                 .append("javax").append(File.separator);
         ClassLoader ccl = Thread.currentThread().getContextClassLoader();
         MyClassLoader cl = new MyClassLoader(new URL[]{new File(sbu.toString()).toURI().toURL()}, ccl);
-        //使用自定义类加载器加载
+        //使用自定义类加载器加载Object
         Class<?> strClass = cl.loadClass("java.lang.Object", false);
 
         System.out.println();

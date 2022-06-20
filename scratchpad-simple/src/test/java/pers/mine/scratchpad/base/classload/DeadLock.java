@@ -3,7 +3,7 @@ package pers.mine.scratchpad.base.classload;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 类加载死锁
+ * 类加载死锁 ,java语言规范12.4.2
  */
 public class DeadLock {
     public static class A {

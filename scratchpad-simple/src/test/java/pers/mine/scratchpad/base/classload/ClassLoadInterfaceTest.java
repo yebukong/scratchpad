@@ -2,6 +2,7 @@ package pers.mine.scratchpad.base.classload;
 
 /**
  * 接口的初始化
+ * 通过查看字节码，SuperInterface存在clinit方法，但是ClassLoadInterfaceTest没有
  */
 public class ClassLoadInterfaceTest {
     public static void main(String[] args) {
@@ -9,7 +10,6 @@ public class ClassLoadInterfaceTest {
         // 但接口与类不同的是，执行接口的<clinit>()方法不需要先执行父接口的<clinit>()方法，
         // 因为只有当父接口中定义的变量被使用时，父接口才会被初始化。
         // 此外，接口的实现类在初始化时也一样不会执行接口的<clinit>()方法。
-
         SubInterface sbi = new SubInterface() {
         };
         System.out.println("sbi.superO调用前...");
