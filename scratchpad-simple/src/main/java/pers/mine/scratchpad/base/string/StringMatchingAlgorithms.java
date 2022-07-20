@@ -28,6 +28,33 @@ public class StringMatchingAlgorithms {
         return -1;
     }
 
+    /**
+     * 暴力匹配，回溯写法
+     */
+    public static int bruteForce1(char[] target, char[] pattern) {
+        if (target.length < pattern.length) {
+            return -1;
+        }
+        if (pattern.length == 0) {
+            return 0;
+        }
+        int i = 0; //主串索引
+        int j = 0; //匹配串索引
+
+        while ((i + j) < target.length && j < pattern.length) {
+            if (target[i + j] == pattern[j]) {
+                j++;
+            } else {
+                i++;
+                j = 0;
+            }
+        }
+        if (j == pattern.length) {
+            return i;
+        }
+        return -1;
+    }
+
     public static int rabinKarpSimpleHash(char[] target, char[] pattern) {
         int patternHash = 0;
         for (int i = 0; i < pattern.length; i++) {
@@ -154,8 +181,9 @@ public class StringMatchingAlgorithms {
         System.out.println(polynomialRollingHashHashArr("de".toCharArray()));
 
         char[] target = "abcde".toCharArray();
-        char[] pattern = "de".toCharArray();
+        char[] pattern = "def".toCharArray();
         System.out.println(bruteForce(target, pattern));
+        System.out.println(bruteForce1(target, pattern));
         System.out.println(rabinKarpSimpleHash(target, pattern));
         System.out.println(rabinKarpPolynomialRollingHash(target, pattern));
 //        int patternHash = 0;
