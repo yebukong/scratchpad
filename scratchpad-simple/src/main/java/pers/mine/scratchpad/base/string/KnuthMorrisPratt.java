@@ -1,5 +1,7 @@
 package pers.mine.scratchpad.base.string;
 
+import java.util.Arrays;
+
 /**
  * KMP算法
  */
@@ -14,7 +16,7 @@ public class KnuthMorrisPratt {
         int[] next = getNext(pattern);
         int i = 0; //主串索引比较的起始位置
         int j = 0; //匹配串字符比较索引
-        while ((i + j) < target.length && j < pattern.length) {
+        while (i < target.length && j < pattern.length) {
             if (target[i] == pattern[j]) {
                 i++;
                 j++;
@@ -22,8 +24,8 @@ public class KnuthMorrisPratt {
                 int nextIndex = next[j];
                 if (nextIndex == -1) { //-1表示第一个字符位未匹配，直接都+1
                     i++;
-                    j++;
-                } else { //找到 next 情况下,i位置不变(j已经在)，j跳转到next所在位置开始比较
+                    j = 0; //等同于j++，可以和外部if代码合并
+                } else { //找到 next 情况下,i位置保持不变，j跳转到next所在位置开始比较
                     j = next[j];
                 }
             }
@@ -59,7 +61,52 @@ public class KnuthMorrisPratt {
     }
 
     public static int[] getNext(char[] pattern) {
-        return null;
+        int[] next = new int[pattern.length];
+        next[0] = -1;
+        int j = 0;
+        int k = -1;
+        while (j < pattern.length - 1) {
+            // k 为 -1，表示不匹配，没有共有元素
+            //p[k]表示前缀，p[j]表示后缀
+            if (k == -1 || pattern[j] == pattern[k]) {
+                j++;
+                k++;
+                next[j] = k;
+            } else
+                k = next[k];
+        }
+        return next;
+    }
+
+    public static int[] getNextX(char[] pattern) {
+        int[] next = new int[pattern.length];
+        next[0] = -1;
+        int j = 0;
+        int k = -1;
+        while (j < pattern.length - 1) {
+            // k 为 -1，表示不匹配，没有共有元素
+            if (k == -1 || pattern[j] == pattern[k]) {
+                j++;
+                k++;
+                if(pattern[j] == pattern[k]){
+                    next[j] = next[k];
+                }else{
+                    next[j] = k;
+                }
+            } else
+                k = next[k];
+        }
+        return next;
+    }
+
+    public static void main(String[] args) {
+        char[] target = "ababababca".toCharArray();
+        char[] pattern = "ababacd".toCharArray();
+        System.out.println(Arrays.toString(getNext(pattern)));
+        System.out.println(Arrays.toString(getNextX(pattern)));
+
+        //System.out.println(Arrays.toString(getNext0(pattern)));
+        System.out.println(knuthMorrisPratt(target, pattern));
     }
 
     /**
