@@ -7,7 +7,7 @@ import java.util.Queue;
  * AC自动机
  */
 public class AhoCorasick {
-    private final AcNode root = new AcNode('/'); // 根结点无数据
+    private final AcNode root = new AcNode(); // 根结点无数据
 
     /**
      * Fail指针填充
@@ -20,6 +20,7 @@ public class AhoCorasick {
         while (!queue.isEmpty()) {
             AcNode p = queue.remove();
             for (int i = 0; i < 26; ++i) {
+                //i其实代表当前字符
                 AcNode pc = p.children[i];
                 //跳过空节点
                 if (pc == null)
@@ -31,10 +32,10 @@ public class AhoCorasick {
                     //获取父节点的fail指针
                     AcNode q = p.fail;
                     while (q != null) {
-                        // q.children[pc.data - 'a'] 表示父节点fail指针的和当前字符子节点
+                        // q.children[i] 表示父节点fail指针的和当前字符子节点
                         // 不为空，说明存在，即pc.data=qc.data，说明找到了fail指针
                         // 若没有找到，则递归查找fail指针的fail指针(q = q.fail)，直到为空
-                        AcNode qc = q.children[pc.data - 'a'];
+                        AcNode qc = q.children[i];
                         if (qc != null) {
                             pc.fail = qc;
                             break;
@@ -56,7 +57,7 @@ public class AhoCorasick {
         for (int i = 0; i < text.length; ++i) {
             int index = text[i] - 'a';
             if (p.children[index] == null) {
-                AcNode newNode = new AcNode(text[i]);
+                AcNode newNode = new AcNode();
                 p.children[index] = newNode;
             }
             p = p.children[index];
@@ -134,15 +135,11 @@ public class AhoCorasick {
         ahoCorasick.match0("abcde".toCharArray());
     }
 
-    static class AcNode {
-        public char data;
+    public static class AcNode {
+        //不需要记录当前节点值
         public AcNode[] children = new AcNode[26]; // 字符集只包含a~z这26个字符
         public boolean isEndingChar = false; // 结尾字符为true
         public int length = -1; // 当isEndingChar=true时，记录模式串长度
         public AcNode fail; // 失败指针
-
-        public AcNode(char data) {
-            this.data = data;
-        }
     }
 }
