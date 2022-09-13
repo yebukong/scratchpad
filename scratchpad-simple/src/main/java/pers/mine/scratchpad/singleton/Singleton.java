@@ -2,7 +2,7 @@ package pers.mine.scratchpad.singleton;
 
 /**
  * 几种单例模式的实现
- * 
+ *
  * @author Mine
  */
 public class Singleton {
@@ -33,7 +33,7 @@ public class Singleton {
 	/**
 	 * https://www.cnblogs.com/a154627/p/10046147.html DCL双检锁: 可以保证单例，除非反射，
 	 */
-	public synchronized static Singleton getInstanceDCL() {
+	public  static Singleton getInstanceDCL() {
 		if (instanceB == null) {// 可以去掉，但去掉后并发效率下降
 			synchronized (Singleton.class) {
 				if (instanceB == null) {// 不可以去掉，可能出现多个线程同时通过外部if，从而初始化多次
@@ -47,7 +47,7 @@ public class Singleton {
 	/**
 	 * 深入原理：https://blog.csdn.net/mnb65482/article/details/80458571
 	 * 静态内部类方式：没有if，DCL方式效率更高一掉吧，但依然会有反射的问题
-	 * 1.静态内部类不会随着外部类的初始化而初始化，他是要单独去加载和初始化的，当第一次执行getInstance方法时，Inner类会被初始化。 
+	 * 1.静态内部类不会随着外部类的初始化而初始化，他是要单独去加载和初始化的，当第一次执行getInstance方法时，Inner类会被初始化。
 	 * <br>2.静态对象SINGLETION的初始化在Inner类初始化阶段进行，类初始化阶段即虚拟机执行类构造器<clinit>()方法的过程。
 	 * 虚拟机会保证一个类的<clinit>()方法在多线程环境下被正确的加锁和同步，如果多个线程同时初始化一个类，只会有一个线程执行这个类的<clinit>()方法，其它线程都会阻塞等待。
 	 */
@@ -58,7 +58,7 @@ public class Singleton {
 	private static class Inner {
 		private static Singleton SINGLETION = new Singleton();
 	}
-	
+
 	public static void test() {
 		System.out.println("test");
 	}

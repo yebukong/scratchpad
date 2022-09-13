@@ -39,7 +39,7 @@ public class Manacher {
     }
 
     /**
-     * 优化后分支
+     * 优化后分支，不是完全等价的
      */
     public static void manacher(char[] source) {
         char[] cs = init(source);
