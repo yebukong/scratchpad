@@ -18,33 +18,53 @@ import java.lang.reflect.Method;
 @BenchmarkMode({Mode.Throughput})
 @State(Scope.Thread)
 public class RefJmhTest {
-    RefJmhTest t = null;
+    static final RefJmhTest t = new RefJmhTest();
     Method method = null;
     MethodHandle methodMH = null;
     Object[] args = {1};
+    static final Integer i = 1;
+
+    final static MethodHandle methodMH1;
+
+    static {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        MethodType mt = MethodType.methodType(void.class, Integer.class);
+        try {
+            methodMH1 = lookup.findVirtual(RefJmhTest.class, "target", mt).bindTo(t);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Setup
     public void setup() throws NoSuchMethodException, IllegalAccessException {
-        t = new RefJmhTest();
         method = RefJmhTest.class.getDeclaredMethod("target", Integer.class);
+        method.setAccessible(true);
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodType mt = MethodType.methodType(void.class, Integer.class);
         methodMH = lookup.findVirtual(RefJmhTest.class, "target", mt).bindTo(t);
     }
 
     @Benchmark
-    public void test1() {
-        t.target(1);
+    public void nativeCallTest() {
+        t.target(i);
     }
 
     @Benchmark
-    public void test2() throws InvocationTargetException, IllegalAccessException {
+    public void refInvoke() throws InvocationTargetException, IllegalAccessException {
         method.invoke(t, args);
     }
 
     @Benchmark
-    public void test3() throws Throwable {
-        methodMH.invoke(1);
+    public void methodHandleTest() throws Throwable {
+        methodMH.invokeExact(i);
+    }
+
+    @Benchmark
+    public void methodHandleTest1() throws Throwable {
+        methodMH1.invokeExact(i);
     }
 
     public void target(Integer a) {

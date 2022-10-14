@@ -1,5 +1,7 @@
 package pers.mine.scratchpad.designpattern.creational;
 
+import java.nio.charset.Charset;
+
 /**
  * 简单工厂
  */

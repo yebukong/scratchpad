@@ -21,6 +21,7 @@
         <module>scratchpad-simple</module>
         <module>scratchpad-springboot</module>
         <module>scratchpad-java17</module>
+        <module>scratchpad-java19</module>
         <module>scratchpad-java7</module>
         <module>scratchpad-java6</module>
     </modules>
@@ -65,7 +66,9 @@
                     <encoding>UTF-8</encoding>
                     <compilerArgs>
                         <!--<arg>-parameters</arg>-->
+                        <arg>--enable-preview</arg>
                     </compilerArgs>
+
                 </configuration>
             </plugin>
         </plugins>

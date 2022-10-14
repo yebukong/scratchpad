@@ -33,7 +33,8 @@ public class DeadLock {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class.forName("pers.mine.scratchpad.base.classload.DeadLock$A");
         new Thread(() -> A.test()).start();
         new Thread(() -> B.test()).start();
     }

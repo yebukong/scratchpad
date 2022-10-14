@@ -21,9 +21,9 @@ public class ClassLoadRefTypeTest {
 
     public static void main(String[] args) throws Throwable {
         //主动引用
-        activeRefTest();
+//        activeRefTest();
         //被动引用
-        //passiveRefTest();
+        passiveRefTest();
     }
 
     /**
@@ -31,7 +31,7 @@ public class ClassLoadRefTypeTest {
      */
     static void activeRefTest() throws Throwable {
         //1.new
-        //new Inner();
+//        new Inner();
         //2.访问静类态变量，非“常量”
         //String s = Inner.FINAL_HELLOWORLD;
         //String s = Inner.HELLOWORLD;
@@ -40,11 +40,11 @@ public class ClassLoadRefTypeTest {
         //4.Class.forName及反射调用，方法上声明的自定义异常类也会加载
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
         //Class.forName可以使用initialize控制是否初始化
-        Class<?> aClass = Class.forName("pers.mine.scratchpad.base.classload.ClassLoadRefTypeTest$Inner", true, cl);
+//        Class<?> aClass = Class.forName("pers.mine.scratchpad.base.classload.ClassLoadRefTypeTest$Inner", true, cl);
         //loadClass本身不触发初始化，常量字段反射访问会触发初始化
-        //Class<?> aClass = cl.loadClass("pers.mine.scratchpad.base.classload.ClassLoadRefTypeTest$Inner");
-        //Field finalHelloworld = aClass.getField("FINAL_HELLOWORLD");
-        //System.out.println(finalHelloworld.get(null));
+//        Class<?> aClass = cl.loadClass("pers.mine.scratchpad.base.classload.ClassLoadRefTypeTest$Inner");
+//        Field finalHelloworld = aClass.getField("FINAL_HELLOWORLD");
+//        System.out.println(finalHelloworld.get(null));
         //5.方法句柄
         //MethodHandles.Lookup lookup = MethodHandles.lookup();
         //MethodType methodType = MethodType.methodType(void.class, boolean.class);
@@ -61,13 +61,13 @@ public class ClassLoadRefTypeTest {
      */
     static void passiveRefTest() {
         //通过子类引用父类的静态字段，不会导致子类初始化,但是InnerSubClass是加载的
-        //System.out.println(InnerSubClass.HELLOWORLD);
+//        System.out.println(InnerSubClass.HELLOWORLD);
         //通过数组定义的引用类，不会触发此类的初始化,但是会触发加载
         //InnerSubClass[] arr = new InnerSubClass[1];
         //常量引用,类加载行为也不会有，编译阶段已放入常量池
         //System.out.println(InnerSubClass.FINAL_HELLOWORLD);
         //无法在编译期间确认的常量引用,依然会有类初始化，但只初始化真正持有常量引用的类(父类)，子类只加载，不初始化
-        //System.out.println(InnerSubClass.FINAL_NEW_HELLOWORLD);
+//        System.out.println(InnerSubClass.FINAL_NEW_HELLOWORLD);
     }
 
     static class Inner {

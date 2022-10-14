@@ -20,7 +20,7 @@ public class ClassLoaderPrepareTest {
     static {
         //赋值正常，访问会编译报错 Illegal forward reference
         s_edit_1 = 1;
-        //System.out.println(edit_3);
+//        System.out.println(edit_3);
         s_edit_4 = 1;
     }
 
@@ -32,7 +32,7 @@ public class ClassLoaderPrepareTest {
 
     static {
         //访问正常
-        //System.out.println(s_edit_3);
+//        System.out.println(s_edit_3);
     }
 
     public ClassLoaderPrepareTest() {

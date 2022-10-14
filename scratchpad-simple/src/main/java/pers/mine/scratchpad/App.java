@@ -9,7 +9,7 @@ import java.util.*;
  */
 @Extension
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        var x = """
 //                 asdasd
 //                 啊实打实的ss
@@ -37,6 +37,13 @@ public class App {
         long y2 = y1 / 10000;
         System.out.println(y1);
         System.out.println(y2);
+
+        Thread.sleep(1000);
+        System.out.println(1);
+        Thread.sleep(1000);
+        System.out.println(2);
+        Thread.sleep(1000);
+        System.out.println(3);
     }
 
     public static void testIf1(int i) {
