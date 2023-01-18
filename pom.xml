@@ -64,11 +64,14 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>UTF-8</encoding>
+                    <showWarnings>true</showWarnings>
                     <compilerArgs>
+                        <arg>-XDignore.symbol.file</arg>
+                        <arg>-J-Dfile.encoding=UTF-8</arg>
                         <!--<arg>-parameters</arg>-->
-                        <arg>--enable-preview</arg>
+<!--                        <arg>&#45;&#45;enable-preview</arg>-->
                     </compilerArgs>
-
+                    <fork>true</fork>
                 </configuration>
             </plugin>
         </plugins>

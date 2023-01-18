@@ -1,0 +1,179 @@
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\apps\IDEA-C\ch-1\222.4345.14\lib\idea_rt.jar=4258:D:\Soft\idea\apps\IDEA-C\ch-1\222.4345.14\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.String2BytesTest.testString
+
+# Run progress: 0.00% complete, ETA 00:16:40
+# Fork: 1 of 5
+# Warmup Iteration   1: 14171551.760 ops/s
+# Warmup Iteration   2: 18243857.419 ops/s
+# Warmup Iteration   3: 18592347.123 ops/s
+# Warmup Iteration   4: 15977144.635 ops/s
+# Warmup Iteration   5: 16379213.489 ops/s
+Iteration   1: 18057832.928 ops/s
+Iteration   2: 18585034.612 ops/s
+Iteration   3: 18349468.164 ops/s
+Iteration   4: 17639640.891 ops/s
+Iteration   5: 18250128.104 ops/s
+
+# Run progress: 10.00% complete, ETA 00:15:13
+# Fork: 2 of 5
+# Warmup Iteration   1: 16945028.085 ops/s
+# Warmup Iteration   2: 18217412.817 ops/s
+# Warmup Iteration   3: 18565341.091 ops/s
+# Warmup Iteration   4: 18580944.701 ops/s
+# Warmup Iteration   5: 18306411.516 ops/s
+Iteration   1: 17785931.487 ops/s
+Iteration   2: 18060288.516 ops/s
+Iteration   3: 18379158.102 ops/s
+Iteration   4: 18303748.861 ops/s
+Iteration   5: 18440494.052 ops/s
+
+# Run progress: 20.00% complete, ETA 00:13:31
+# Fork: 3 of 5
+# Warmup Iteration   1: 16309596.442 ops/s
+# Warmup Iteration   2: 17558149.028 ops/s
+# Warmup Iteration   3: 17355463.393 ops/s
+# Warmup Iteration   4: 17689642.262 ops/s
+# Warmup Iteration   5: 17212847.729 ops/s
+Iteration   1: 17302388.440 ops/s
+Iteration   2: 17332658.270 ops/s
+Iteration   3: 17002335.787 ops/s
+Iteration   4: 17376378.792 ops/s
+Iteration   5: 17500213.187 ops/s
+
+# Run progress: 30.00% complete, ETA 00:11:50
+# Fork: 4 of 5
+# Warmup Iteration   1: 15780286.574 ops/s
+# Warmup Iteration   2: 17152919.259 ops/s
+# Warmup Iteration   3: 16490243.482 ops/s
+# Warmup Iteration   4: 16422434.200 ops/s
+# Warmup Iteration   5: 16852840.341 ops/s
+Iteration   1: 16925043.011 ops/s
+Iteration   2: 16795422.023 ops/s
+Iteration   3: 16977779.358 ops/s
+Iteration   4: 16544486.644 ops/s
+Iteration   5: 16603385.599 ops/s
+
+# Run progress: 40.00% complete, ETA 00:10:08
+# Fork: 5 of 5
+# Warmup Iteration   1: 15630734.497 ops/s
+# Warmup Iteration   2: 17108755.430 ops/s
+# Warmup Iteration   3: 16622282.011 ops/s
+# Warmup Iteration   4: 16637074.756 ops/s
+# Warmup Iteration   5: 16815740.668 ops/s
+Iteration   1: 16694559.529 ops/s
+Iteration   2: 16916926.898 ops/s
+Iteration   3: 16923274.987 ops/s
+Iteration   4: 16687496.015 ops/s
+Iteration   5: 16891471.285 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.String2BytesTest.testString":
+  17453021.822 ±(99.9%) 505621.210 ops/s [Average]
+  (min, avg, max) = (16544486.644, 17453021.822, 18585034.612), stdev = 674989.850
+  CI (99.9%): [16947400.611, 17958643.032] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\apps\IDEA-C\ch-1\222.4345.14\lib\idea_rt.jar=4258:D:\Soft\idea\apps\IDEA-C\ch-1\222.4345.14\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.String2BytesTest.testText
+
+# Run progress: 50.00% complete, ETA 00:08:27
+# Fork: 1 of 5
+# Warmup Iteration   1: 13301923.936 ops/s
+# Warmup Iteration   2: 15717371.813 ops/s
+# Warmup Iteration   3: 15488415.711 ops/s
+# Warmup Iteration   4: 15781472.342 ops/s
+# Warmup Iteration   5: 15612522.346 ops/s
+Iteration   1: 15786706.908 ops/s
+Iteration   2: 15433466.793 ops/s
+Iteration   3: 15337496.419 ops/s
+Iteration   4: 15592219.745 ops/s
+Iteration   5: 15080889.633 ops/s
+
+# Run progress: 60.00% complete, ETA 00:06:46
+# Fork: 2 of 5
+# Warmup Iteration   1: 13285696.506 ops/s
+# Warmup Iteration   2: 14843026.119 ops/s
+# Warmup Iteration   3: 14562940.263 ops/s
+# Warmup Iteration   4: 15011645.801 ops/s
+# Warmup Iteration   5: 14835699.663 ops/s
+Iteration   1: 14684259.295 ops/s
+Iteration   2: 14680786.409 ops/s
+Iteration   3: 14793864.711 ops/s
+Iteration   4: 14898527.975 ops/s
+Iteration   5: 14811273.895 ops/s
+
+# Run progress: 70.00% complete, ETA 00:05:04
+# Fork: 3 of 5
+# Warmup Iteration   1: 14225227.444 ops/s
+# Warmup Iteration   2: 15632799.636 ops/s
+# Warmup Iteration   3: 15727081.248 ops/s
+# Warmup Iteration   4: 15759939.012 ops/s
+# Warmup Iteration   5: 15887632.286 ops/s
+Iteration   1: 15561957.715 ops/s
+Iteration   2: 15467814.272 ops/s
+Iteration   3: 14756897.243 ops/s
+Iteration   4: 15269479.011 ops/s
+Iteration   5: 15328164.473 ops/s
+
+# Run progress: 80.00% complete, ETA 00:03:23
+# Fork: 4 of 5
+# Warmup Iteration   1: 13462302.205 ops/s
+# Warmup Iteration   2: 15590751.051 ops/s
+# Warmup Iteration   3: 14795784.073 ops/s
+# Warmup Iteration   4: 14821821.840 ops/s
+# Warmup Iteration   5: 14796401.762 ops/s
+Iteration   1: 14999094.418 ops/s
+Iteration   2: 15592610.337 ops/s
+Iteration   3: 14964037.100 ops/s
+Iteration   4: 15217412.694 ops/s
+Iteration   5: 15158257.280 ops/s
+
+# Run progress: 90.00% complete, ETA 00:01:41
+# Fork: 5 of 5
+# Warmup Iteration   1: 13582644.947 ops/s
+# Warmup Iteration   2: 15116534.229 ops/s
+# Warmup Iteration   3: 15371041.945 ops/s
+# Warmup Iteration   4: 15957164.598 ops/s
+# Warmup Iteration   5: 15183987.193 ops/s
+Iteration   1: 16208228.996 ops/s
+Iteration   2: 16303299.708 ops/s
+Iteration   3: 15872620.322 ops/s
+Iteration   4: 15929222.599 ops/s
+Iteration   5: 15164641.560 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.String2BytesTest.testText":
+  15315729.180 ±(99.9%) 344804.963 ops/s [Average]
+  (min, avg, max) = (14680786.409, 15315729.180, 16303299.708), stdev = 460304.760
+  CI (99.9%): [14970924.218, 15660534.143] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:16:55
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                     Mode  Cnt         Score        Error  Units
+String2BytesTest.testString  thrpt   25  17453021.822 ± 505621.210  ops/s
+String2BytesTest.testText    thrpt   25  15315729.180 ± 344804.963  ops/s

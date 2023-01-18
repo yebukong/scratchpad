@@ -1,6 +1,9 @@
 package pers.mine.scratchpad;
 
 import cn.hutool.core.exceptions.ExceptionUtil;
+import cn.hutool.http.HttpUtil;
+
+import java.net.http.HttpClient;
 
 public class Application {
 

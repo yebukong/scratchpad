@@ -31,15 +31,28 @@ public class AppTest {
         Stream.iterate(0, t -> ++t).limit(70).forEach(t -> {
             System.out.print(t + ",");
         });
+        ints[1] = 100;
+        System.out.println(Arrays.toString(ints));
     }
 
     public static final int[] ints = {1, 2};
 
+    static class A {}
+
+    static class B extends A {}
+
+    String s = "s";
     @Test
     public void test() {
-        ints[1] = 100;
-        System.out.println(Arrays.toString(ints));
+        A a = new A();
+        B b = new B();
+//        System.out.println(b.getClass() == A.class);
     }
+
+    @Test
+    public void test111() {
+    }
+
 
     @Test
     public void streamListtest() {
