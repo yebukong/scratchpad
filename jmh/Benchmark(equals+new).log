@@ -1,0 +1,103 @@
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\lib\idea_rt.jar=14270:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 1 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.String2BytesTest.arrsyEqualsTest
+
+# Run progress: 0.00% complete, ETA 00:06:00
+# Fork: 1 of 3
+# Warmup Iteration   1: 14130233.080 ops/s
+# Warmup Iteration   2: 14353271.525 ops/s
+# Warmup Iteration   3: 13420775.348 ops/s
+# Warmup Iteration   4: 14172525.240 ops/s
+# Warmup Iteration   5: 14085758.801 ops/s
+Iteration   1: 14162381.743 ops/s
+
+# Run progress: 16.67% complete, ETA 00:05:08
+# Fork: 2 of 3
+# Warmup Iteration   1: 14025811.553 ops/s
+# Warmup Iteration   2: 15152273.085 ops/s
+# Warmup Iteration   3: 13770261.721 ops/s
+# Warmup Iteration   4: 14092773.882 ops/s
+# Warmup Iteration   5: 13950169.935 ops/s
+Iteration   1: 14002267.495 ops/s
+
+# Run progress: 33.33% complete, ETA 00:04:06
+# Fork: 3 of 3
+# Warmup Iteration   1: 14625361.588 ops/s
+# Warmup Iteration   2: 15210922.146 ops/s
+# Warmup Iteration   3: 14475397.555 ops/s
+# Warmup Iteration   4: 14714911.679 ops/s
+# Warmup Iteration   5: 14571391.020 ops/s
+Iteration   1: 14681043.293 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.String2BytesTest.arrsyEqualsTest":
+  14281897.510 ±(99.9%) 6473235.817 ops/s [Average]
+  (min, avg, max) = (14002267.495, 14281897.510, 14681043.293), stdev = 354819.898
+  CI (99.9%): [7808661.693, 20755133.327] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\lib\idea_rt.jar=14270:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 1 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.String2BytesTest.strEqualsTest
+
+# Run progress: 50.00% complete, ETA 00:03:04
+# Fork: 1 of 3
+# Warmup Iteration   1: 1157277.756 ops/s
+# Warmup Iteration   2: 1220146.985 ops/s
+# Warmup Iteration   3: 1224279.925 ops/s
+# Warmup Iteration   4: 1113846.480 ops/s
+# Warmup Iteration   5: 1130671.367 ops/s
+Iteration   1: 1177399.804 ops/s
+
+# Run progress: 66.67% complete, ETA 00:02:02
+# Fork: 2 of 3
+# Warmup Iteration   1: 1075610.515 ops/s
+# Warmup Iteration   2: 1173306.851 ops/s
+# Warmup Iteration   3: 868843.542 ops/s
+# Warmup Iteration   4: 1173886.266 ops/s
+# Warmup Iteration   5: 1133948.573 ops/s
+Iteration   1: 1070032.237 ops/s
+
+# Run progress: 83.33% complete, ETA 00:01:01
+# Fork: 3 of 3
+# Warmup Iteration   1: 849539.012 ops/s
+# Warmup Iteration   2: 920624.279 ops/s
+# Warmup Iteration   3: 1156771.643 ops/s
+# Warmup Iteration   4: 1026357.325 ops/s
+# Warmup Iteration   5: 1120099.841 ops/s
+Iteration   1: 1062909.573 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.String2BytesTest.strEqualsTest":
+  1103447.205 ±(99.9%) 1170221.159 ops/s [Average]
+  (min, avg, max) = (1062909.573, 1103447.205, 1177399.804), stdev = 64143.770
+  CI (99.9%): [≈ 0, 2273668.364] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:06:09
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                          Mode  Cnt         Score         Error  Units
+String2BytesTest.arrsyEqualsTest  thrpt    3  14281897.510 ± 6473235.817  ops/s
+String2BytesTest.strEqualsTest    thrpt    3   1103447.205 ± 1170221.159  ops/s

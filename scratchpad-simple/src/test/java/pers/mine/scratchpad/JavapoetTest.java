@@ -7,14 +7,13 @@ import org.junit.Test;
 public class JavapoetTest {
     @Test
     public void test() {
-
         CodeBlock.Builder add = CodeBlock.builder().add("I ate $L $L", 3, "tacos");
+
         add.beginControlFlow("");
         add.add("//test");
         add.endControlFlow();
         CodeBlock build = add.build();
         System.out.println(build.toString());
-
     }
 
     @Test

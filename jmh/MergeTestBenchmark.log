@@ -1,0 +1,179 @@
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\lib\idea_rt.jar=14808:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.MergeTest.listMerge
+
+# Run progress: 0.00% complete, ETA 00:16:40
+# Fork: 1 of 5
+# Warmup Iteration   1: 7455434.215 ops/s
+# Warmup Iteration   2: 7492022.631 ops/s
+# Warmup Iteration   3: 7621561.161 ops/s
+# Warmup Iteration   4: 7529645.430 ops/s
+# Warmup Iteration   5: 7947916.248 ops/s
+Iteration   1: 7960491.459 ops/s
+Iteration   2: 7927319.006 ops/s
+Iteration   3: 8062830.657 ops/s
+Iteration   4: 8006952.180 ops/s
+Iteration   5: 8036239.759 ops/s
+
+# Run progress: 10.00% complete, ETA 00:15:13
+# Fork: 2 of 5
+# Warmup Iteration   1: 7276484.566 ops/s
+# Warmup Iteration   2: 7396222.599 ops/s
+# Warmup Iteration   3: 7785914.539 ops/s
+# Warmup Iteration   4: 7680920.252 ops/s
+# Warmup Iteration   5: 7956754.440 ops/s
+Iteration   1: 7987542.341 ops/s
+Iteration   2: 7914297.347 ops/s
+Iteration   3: 7619034.188 ops/s
+Iteration   4: 7742716.894 ops/s
+Iteration   5: 7969203.847 ops/s
+
+# Run progress: 20.00% complete, ETA 00:13:32
+# Fork: 3 of 5
+# Warmup Iteration   1: 6072513.306 ops/s
+# Warmup Iteration   2: 7904084.465 ops/s
+# Warmup Iteration   3: 6669940.027 ops/s
+# Warmup Iteration   4: 6513193.489 ops/s
+# Warmup Iteration   5: 6484420.387 ops/s
+Iteration   1: 6436787.850 ops/s
+Iteration   2: 6652788.346 ops/s
+Iteration   3: 6624642.170 ops/s
+Iteration   4: 6212683.166 ops/s
+Iteration   5: 6465996.047 ops/s
+
+# Run progress: 30.00% complete, ETA 00:11:50
+# Fork: 4 of 5
+# Warmup Iteration   1: 7360910.527 ops/s
+# Warmup Iteration   2: 6973868.204 ops/s
+# Warmup Iteration   3: 7320547.519 ops/s
+# Warmup Iteration   4: 7254934.002 ops/s
+# Warmup Iteration   5: 7296265.457 ops/s
+Iteration   1: 7271641.575 ops/s
+Iteration   2: 7320515.339 ops/s
+Iteration   3: 7336917.757 ops/s
+Iteration   4: 7350696.321 ops/s
+Iteration   5: 7259581.664 ops/s
+
+# Run progress: 40.00% complete, ETA 00:10:08
+# Fork: 5 of 5
+# Warmup Iteration   1: 7512823.986 ops/s
+# Warmup Iteration   2: 8042542.556 ops/s
+# Warmup Iteration   3: 7943955.426 ops/s
+# Warmup Iteration   4: 7975517.942 ops/s
+# Warmup Iteration   5: 7947805.331 ops/s
+Iteration   1: 7886818.514 ops/s
+Iteration   2: 7923734.446 ops/s
+Iteration   3: 7840730.167 ops/s
+Iteration   4: 7938652.979 ops/s
+Iteration   5: 7951164.624 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.MergeTest.listMerge":
+  7507999.146 ±(99.9%) 441312.227 ops/s [Average]
+  (min, avg, max) = (6212683.166, 7507999.146, 8062830.657), stdev = 589139.197
+  CI (99.9%): [7066686.919, 7949311.373] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\lib\idea_rt.jar=14808:D:\Soft\idea\apps\IDEA-C\ch-1\223.8617.56\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.MergeTest.longMerge
+
+# Run progress: 50.00% complete, ETA 00:08:27
+# Fork: 1 of 5
+# Warmup Iteration   1: 104931829.756 ops/s
+# Warmup Iteration   2: 104888357.631 ops/s
+# Warmup Iteration   3: 111509746.546 ops/s
+# Warmup Iteration   4: 105863177.050 ops/s
+# Warmup Iteration   5: 110755849.039 ops/s
+Iteration   1: 111385960.611 ops/s
+Iteration   2: 111852635.523 ops/s
+Iteration   3: 110915101.194 ops/s
+Iteration   4: 113031286.147 ops/s
+Iteration   5: 111911945.521 ops/s
+
+# Run progress: 60.00% complete, ETA 00:06:45
+# Fork: 2 of 5
+# Warmup Iteration   1: 107710667.396 ops/s
+# Warmup Iteration   2: 107034376.652 ops/s
+# Warmup Iteration   3: 109015660.945 ops/s
+# Warmup Iteration   4: 110912634.493 ops/s
+# Warmup Iteration   5: 110994354.332 ops/s
+Iteration   1: 111532317.333 ops/s
+Iteration   2: 112322036.973 ops/s
+Iteration   3: 112163528.834 ops/s
+Iteration   4: 110838944.201 ops/s
+Iteration   5: 110795801.020 ops/s
+
+# Run progress: 70.00% complete, ETA 00:05:04
+# Fork: 3 of 5
+# Warmup Iteration   1: 110404610.009 ops/s
+# Warmup Iteration   2: 110117640.873 ops/s
+# Warmup Iteration   3: 114121943.406 ops/s
+# Warmup Iteration   4: 113688787.412 ops/s
+# Warmup Iteration   5: 111616623.842 ops/s
+Iteration   1: 112601670.806 ops/s
+Iteration   2: 113500721.894 ops/s
+Iteration   3: 114088964.019 ops/s
+Iteration   4: 114845085.488 ops/s
+Iteration   5: 113794257.665 ops/s
+
+# Run progress: 80.00% complete, ETA 00:03:22
+# Fork: 4 of 5
+# Warmup Iteration   1: 109136056.690 ops/s
+# Warmup Iteration   2: 107517438.625 ops/s
+# Warmup Iteration   3: 113237536.538 ops/s
+# Warmup Iteration   4: 113031553.403 ops/s
+# Warmup Iteration   5: 110239101.939 ops/s
+Iteration   1: 112709896.519 ops/s
+Iteration   2: 112203395.073 ops/s
+Iteration   3: 111948304.525 ops/s
+Iteration   4: 112586604.466 ops/s
+Iteration   5: 113729300.182 ops/s
+
+# Run progress: 90.00% complete, ETA 00:01:41
+# Fork: 5 of 5
+# Warmup Iteration   1: 91858485.036 ops/s
+# Warmup Iteration   2: 90946305.622 ops/s
+# Warmup Iteration   3: 96110172.792 ops/s
+# Warmup Iteration   4: 95224381.028 ops/s
+# Warmup Iteration   5: 95664547.173 ops/s
+Iteration   1: 95226965.584 ops/s
+Iteration   2: 96052611.311 ops/s
+Iteration   3: 96533783.426 ops/s
+Iteration   4: 95423406.802 ops/s
+Iteration   5: 95634070.002 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.MergeTest.longMerge":
+  109105143.805 ±(99.9%) 5153494.361 ops/s [Average]
+  (min, avg, max) = (95226965.584, 109105143.805, 114845085.488), stdev = 6879767.530
+  CI (99.9%): [103951649.443, 114258638.166] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:16:54
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark             Mode  Cnt          Score         Error  Units
+MergeTest.listMerge  thrpt   25    7507999.146 ±  441312.227  ops/s
+MergeTest.longMerge  thrpt   25  109105143.805 ± 5153494.361  ops/s
