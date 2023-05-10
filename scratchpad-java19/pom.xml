@@ -29,12 +29,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <executable>${env.JAVA_19_HOME}/bin/javac</executable>
                     <compilerArgs>
                         <arg>-XDignore.symbol.file</arg>
+                        <arg>-J-Dfile.encoding=UTF-8</arg>
+                        <arg>-J-Duser.language=en_us</arg>
                         <arg>-parameters</arg>
                         <arg>--enable-preview</arg>
                     </compilerArgs>
-                    <fork>false</fork>
+                    <fork>true</fork>
                 </configuration>
             </plugin>
         </plugins>
