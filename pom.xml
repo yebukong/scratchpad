@@ -22,10 +22,13 @@
     <modules>
         <module>scratchpad-simple</module>
         <module>scratchpad-springboot</module>
+        <module>scratchpad-java11</module>
         <module>scratchpad-java17</module>
         <module>scratchpad-java19</module>
+        <module>scratchpad-java21</module>
         <module>scratchpad-java7</module>
         <module>scratchpad-java6</module>
+        <module>scratchpad-javamodule</module>
     </modules>
     <dependencies>
         <dependency>
