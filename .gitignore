@@ -3,3 +3,5 @@
 .idea/
 *.iml
 **/*.iml
+/scratchpad-java19/*.iml
+/scratchpad-simple/*.iml
