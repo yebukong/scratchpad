@@ -31,11 +31,10 @@
                 <configuration>
                     <compilerArgs>
                         <arg>-XDignore.symbol.file</arg>
-                        <arg>-J-Dfile.encoding=UTF-8</arg>
-                        <arg>-J-Duser.language=en_us</arg>
                         <arg>-parameters</arg>
                         <arg>--enable-preview</arg>
                     </compilerArgs>
+                    <fork>false</fork>
                 </configuration>
             </plugin>
         </plugins>

@@ -80,8 +80,7 @@
                         <compilerArgs>
                             <arg>-XDignore.symbol.file</arg>
                             <arg>-J-Dfile.encoding=UTF-8</arg>
-                            <!--<arg>-parameters</arg>-->
-                            <!-- <arg>&#45;&#45;enable-preview</arg>-->
+                            <arg>-J-Duser.language=en_us</arg>
                         </compilerArgs>
                         <fork>true</fork>
                     </configuration>

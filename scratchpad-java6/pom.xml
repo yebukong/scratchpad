@@ -28,6 +28,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <showWarnings>true</showWarnings>
+                    <compilerArgs>
+                        <arg>-XDignore.symbol.file</arg>
+                        <arg>-J-Dfile.encoding=UTF-8</arg>
+                        <arg>-J-Duser.language=en_us</arg>
+                    </compilerArgs>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
     </build>
