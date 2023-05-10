@@ -12,19 +12,23 @@
     <artifactId>scratchpad-java6</artifactId>
 
     <properties>
-        <java.version>6</java.version>
+        <java.version>1.6</java.version>
         <junit.version>4.13.2</junit.version>
     </properties>
-
-    <dependencyManagement>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
