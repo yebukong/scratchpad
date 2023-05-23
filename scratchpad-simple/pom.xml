@@ -16,7 +16,7 @@
         <commons-io.version>2.4</commons-io.version>
         <poi.version>4.1.0</poi.version>
         <lombok.version>1.18.6</lombok.version>
-        <guava.version>27.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <cglib.version>3.2.12</cglib.version>
         <transmittable.version>2.10.2</transmittable.version>
         <ical4j.version>2.0.0</ical4j.version>
