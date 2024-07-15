@@ -1,0 +1,179 @@
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\IntelliJ IDEA Community Edition\lib\idea_rt.jar=9930:D:\Soft\idea\IntelliJ IDEA Community Edition\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.ArrayCopyTest.arrayClone
+
+# Run progress: 0.00% complete, ETA 00:16:40
+# Fork: 1 of 5
+# Warmup Iteration   1: 69373932.773 ops/s
+# Warmup Iteration   2: 74913033.621 ops/s
+# Warmup Iteration   3: 75352949.683 ops/s
+# Warmup Iteration   4: 79980955.301 ops/s
+# Warmup Iteration   5: 80026572.037 ops/s
+Iteration   1: 81365103.630 ops/s
+Iteration   2: 81285877.142 ops/s
+Iteration   3: 80215297.881 ops/s
+Iteration   4: 80291783.460 ops/s
+Iteration   5: 81461175.500 ops/s
+
+# Run progress: 10.00% complete, ETA 00:15:14
+# Fork: 2 of 5
+# Warmup Iteration   1: 73794741.262 ops/s
+# Warmup Iteration   2: 80470706.593 ops/s
+# Warmup Iteration   3: 81640323.542 ops/s
+# Warmup Iteration   4: 80114723.054 ops/s
+# Warmup Iteration   5: 81001040.678 ops/s
+Iteration   1: 81180611.913 ops/s
+Iteration   2: 81090318.096 ops/s
+Iteration   3: 80570543.711 ops/s
+Iteration   4: 80285971.550 ops/s
+Iteration   5: 79780876.656 ops/s
+
+# Run progress: 20.00% complete, ETA 00:13:32
+# Fork: 3 of 5
+# Warmup Iteration   1: 67665882.730 ops/s
+# Warmup Iteration   2: 63401539.059 ops/s
+# Warmup Iteration   3: 66962737.529 ops/s
+# Warmup Iteration   4: 69990413.957 ops/s
+# Warmup Iteration   5: 77492177.654 ops/s
+Iteration   1: 77004845.560 ops/s
+Iteration   2: 77258210.694 ops/s
+Iteration   3: 77753093.935 ops/s
+Iteration   4: 76840743.128 ops/s
+Iteration   5: 77054482.212 ops/s
+
+# Run progress: 30.00% complete, ETA 00:11:50
+# Fork: 4 of 5
+# Warmup Iteration   1: 74145306.732 ops/s
+# Warmup Iteration   2: 78715936.042 ops/s
+# Warmup Iteration   3: 80556467.581 ops/s
+# Warmup Iteration   4: 80507544.595 ops/s
+# Warmup Iteration   5: 80257327.690 ops/s
+Iteration   1: 81539765.915 ops/s
+Iteration   2: 81225129.190 ops/s
+Iteration   3: 79184578.761 ops/s
+Iteration   4: 79176923.407 ops/s
+Iteration   5: 64608317.084 ops/s
+
+# Run progress: 40.00% complete, ETA 00:10:09
+# Fork: 5 of 5
+# Warmup Iteration   1: 66572922.179 ops/s
+# Warmup Iteration   2: 69863782.661 ops/s
+# Warmup Iteration   3: 70791567.276 ops/s
+# Warmup Iteration   4: 77444988.954 ops/s
+# Warmup Iteration   5: 75780967.638 ops/s
+Iteration   1: 76222333.876 ops/s
+Iteration   2: 61147420.406 ops/s
+Iteration   3: 70250012.411 ops/s
+Iteration   4: 75914414.760 ops/s
+Iteration   5: 63731090.751 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.ArrayCopyTest.arrayClone":
+  77057556.865 ±(99.9%) 4380692.641 ops/s [Average]
+  (min, avg, max) = (61147420.406, 77057556.865, 81539765.915), stdev = 5848099.342
+  CI (99.9%): [72676864.225, 81438249.506] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 1.8.0_191, Java HotSpot(TM) 64-Bit Server VM, 25.191-b12
+# VM invoker: D:\Soft\java\1.8\jre\bin\java.exe
+# VM options: -javaagent:D:\Soft\idea\IntelliJ IDEA Community Edition\lib\idea_rt.jar=9930:D:\Soft\idea\IntelliJ IDEA Community Edition\bin -Dfile.encoding=UTF-8
+# Blackhole mode: full + dont-inline hint (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: pers.mine.scratchpad.jmh.ArrayCopyTest.objectClone
+
+# Run progress: 50.00% complete, ETA 00:08:27
+# Fork: 1 of 5
+# Warmup Iteration   1: 65398085.187 ops/s
+# Warmup Iteration   2: 70857902.934 ops/s
+# Warmup Iteration   3: 70916777.156 ops/s
+# Warmup Iteration   4: 83727194.365 ops/s
+# Warmup Iteration   5: 82255002.739 ops/s
+Iteration   1: 76311681.317 ops/s
+Iteration   2: 86954436.003 ops/s
+Iteration   3: 89495194.491 ops/s
+Iteration   4: 90586859.862 ops/s
+Iteration   5: 85116119.699 ops/s
+
+# Run progress: 60.00% complete, ETA 00:06:46
+# Fork: 2 of 5
+# Warmup Iteration   1: 74012996.733 ops/s
+# Warmup Iteration   2: 71003298.400 ops/s
+# Warmup Iteration   3: 81411437.734 ops/s
+# Warmup Iteration   4: 81611263.770 ops/s
+# Warmup Iteration   5: 81372078.432 ops/s
+Iteration   1: 89099853.310 ops/s
+Iteration   2: 88673858.376 ops/s
+Iteration   3: 89886907.584 ops/s
+Iteration   4: 77084724.275 ops/s
+Iteration   5: 90569955.264 ops/s
+
+# Run progress: 70.00% complete, ETA 00:05:04
+# Fork: 3 of 5
+# Warmup Iteration   1: 75211580.920 ops/s
+# Warmup Iteration   2: 79970187.545 ops/s
+# Warmup Iteration   3: 92058492.428 ops/s
+# Warmup Iteration   4: 90851872.023 ops/s
+# Warmup Iteration   5: 91611683.722 ops/s
+Iteration   1: 92662428.131 ops/s
+Iteration   2: 92305702.917 ops/s
+Iteration   3: 91713191.687 ops/s
+Iteration   4: 91669620.478 ops/s
+Iteration   5: 91279387.873 ops/s
+
+# Run progress: 80.00% complete, ETA 00:03:23
+# Fork: 4 of 5
+# Warmup Iteration   1: 76555498.955 ops/s
+# Warmup Iteration   2: 80454738.227 ops/s
+# Warmup Iteration   3: 91123504.456 ops/s
+# Warmup Iteration   4: 90845560.910 ops/s
+# Warmup Iteration   5: 88315487.974 ops/s
+Iteration   1: 89675934.431 ops/s
+Iteration   2: 91697969.673 ops/s
+Iteration   3: 92745465.300 ops/s
+Iteration   4: 91807984.555 ops/s
+Iteration   5: 91934449.058 ops/s
+
+# Run progress: 90.00% complete, ETA 00:01:41
+# Fork: 5 of 5
+# Warmup Iteration   1: 76298845.079 ops/s
+# Warmup Iteration   2: 80269523.488 ops/s
+# Warmup Iteration   3: 90989925.818 ops/s
+# Warmup Iteration   4: 91909050.567 ops/s
+# Warmup Iteration   5: 92864815.984 ops/s
+Iteration   1: 90022254.002 ops/s
+Iteration   2: 90610104.017 ops/s
+Iteration   3: 91789723.851 ops/s
+Iteration   4: 92523066.374 ops/s
+Iteration   5: 91877241.823 ops/s
+
+
+Result "pers.mine.scratchpad.jmh.ArrayCopyTest.objectClone":
+  89523764.574 ±(99.9%) 3192406.068 ops/s [Average]
+  (min, avg, max) = (76311681.317, 89523764.574, 92745465.300), stdev = 4261770.766
+  CI (99.9%): [86331358.506, 92716170.643] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:16:55
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                   Mode  Cnt         Score         Error  Units
+ArrayCopyTest.arrayClone   thrpt   25  77057556.865 ± 4380692.641  ops/s
+ArrayCopyTest.objectClone  thrpt   25  89523764.574 ± 3192406.068  ops/s

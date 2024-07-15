@@ -27,7 +27,7 @@
     // 依赖传递，同时依赖java.logging下依赖的包
     requires transitive java.logging;
 
-    // uses 用于指定当前模块所需要的服务类或者接口
+//     uses 用于指定当前模块所需要的服务类或者接口
     uses java.sql.Driver;
     // 用于 在SPI 场景下，声明服务实现类
     provides java.sql.Driver with pers.mine.scratchpad.module.MyDriver;

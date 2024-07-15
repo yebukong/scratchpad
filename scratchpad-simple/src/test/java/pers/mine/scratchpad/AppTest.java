@@ -1,17 +1,24 @@
 package pers.mine.scratchpad;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.date.format.FastDateFormat;
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.util.CharsetUtil;
+import cn.hutool.core.util.StrUtil;
+import org.apache.commons.collections.IteratorUtils;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.date.format.FastDateFormat;
-import org.junit.Test;
-import org.slf4j.LoggerFactory;
 
 /**
  * Unit test for simple App.
@@ -37,11 +44,14 @@ public class AppTest {
 
     public static final int[] ints = {1, 2};
 
-    static class A {}
+    static class A {
+    }
 
-    static class B extends A {}
+    static class B extends A {
+    }
 
     String s = "s";
+
     @Test
     public void test() {
         A a = new A();
@@ -52,7 +62,6 @@ public class AppTest {
     @Test
     public void test111() {
     }
-
 
     @Test
     public void streamListtest() {
@@ -115,5 +124,45 @@ public class AppTest {
         } else {
             return Math.max(f(n - 2) + a[n], f(n - 1));
         }
+    }
+
+    private static final Logger LOG = LoggerFactory.getLogger(AppTest.class);
+
+//    public void dateTest() {
+//        long time = DateUtil.parseDateTime("2024-03-12 16:00:00").getTime();
+//        System.out.println(time);
+//        IntStream.range(1, 300).forEach(e -> {
+//            System.out.println(e + "->" + KeyGroupRangeAssignment.computeDefaultMaxParallelism(e));
+//        });
+//
+//    }
+
+    @Test
+    public void fileTest() {
+        String filePath = "D:\\iWork\\hexo\\nook-blog\\images";
+        Path path = Paths.get(filePath);
+        System.out.println(path);
+    }
+
+    @Test
+    public void logTest() {
+        LOG.info("test - {}", IteratorUtils.toList(Arrays.asList(1, 2, 3).iterator()));
+    }
+
+    @Test
+    public void dayTest() {
+        long days = System.currentTimeMillis() / 1000 / 60 / 60 / 24;
+        System.out.println(days);
+    }
+
+    @Test
+    public void testColSql() {
+        List<String> strings = FileUtil.readLines(new File("D:\\Mine\\Desktop\\col2.txt"), CharsetUtil.CHARSET_UTF_8);
+        strings.stream()
+                .map(e -> e.split("\\|")[0])
+                .map(String::trim)
+                .map(e -> StrUtil.format("try(count(distinct {})*1.0000000000/count({})) as {}_r", e, e, e))
+                .forEach(System.out::println);
+
     }
 }

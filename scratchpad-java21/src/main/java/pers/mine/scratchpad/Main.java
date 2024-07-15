@@ -1,4 +1,4 @@
-package pers.mine;
+package pers.mine.scratchpad;
 
 import java.util.ArrayList;
 import java.util.List;
