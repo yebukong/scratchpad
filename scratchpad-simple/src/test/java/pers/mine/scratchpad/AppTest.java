@@ -5,6 +5,7 @@ import cn.hutool.core.date.format.FastDateFormat;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.core.util.StrUtil;
+import com.aspose.cells.*;
 import org.apache.commons.collections.IteratorUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -164,5 +165,23 @@ public class AppTest {
                 .map(e -> StrUtil.format("try(count(distinct {})*1.0000000000/count({})) as {}_r", e, e, e))
                 .forEach(System.out::println);
 
+    }
+
+    @Test
+    public void excel2Image() throws Exception {
+        Workbook workbook = new Workbook("D:\\Mine\\Desktop\\test.xlsx");
+        Worksheet worksheet = workbook.getWorksheets().get(0);
+        // 自动调整列宽
+        worksheet.autoFitColumns();
+        // 自动调整行高
+        worksheet.autoFitRows();
+        ImageOrPrintOptions options = new ImageOrPrintOptions();
+        options.setOptimized(true);
+        options.setOnePagePerSheet(true);
+        options.setImageType(ImageType.PNG);
+        options.setGridlineType(GridlineType.DOTTED);
+        options.setAllColumnsInOnePagePerSheet(true);
+        SheetRender sheetRender = new SheetRender(worksheet, options);
+        sheetRender.toImage(0, "D:\\Mine\\Desktop\\test.png");
     }
 }

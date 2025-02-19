@@ -12,6 +12,22 @@
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
     <version>0.0.1-SNAPSHOT</version>
+    
+    <repositories>
+        <repository>
+            <id>Nexus_aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>https://releases.aspose.com/java/repo/</url>
+        </repository>
+    </repositories>
+    
     <properties>
         <commons-io.version>2.4</commons-io.version>
         <poi.version>4.1.0</poi.version>
@@ -169,6 +185,11 @@
         <!--            <version>${hadoop.version}</version>-->
         <!--            <scope>provided</scope>-->
         <!--        </dependency>-->
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-cells</artifactId>
+            <version>25.1</version>
+        </dependency>
     </dependencies>
 
     <build>
